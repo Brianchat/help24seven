@@ -3,9 +3,20 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			auth: {
+				user: {
+					id: string;
+					email: string;
+					updated_at: string;
+					created_at: string;
+					webauthn_credentials: any[];
+				};
+				jwt: string;
+				jwtPayload: any;
+			} | null;
+		}
 		// interface PageData {}
-		// interface PageState {}
 		// interface Platform {}
 	}
 }
