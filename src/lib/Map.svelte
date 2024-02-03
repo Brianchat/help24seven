@@ -25,7 +25,8 @@
 
         const loader = new Loader({
             apiKey: PUBLIC_GOOGLE_MAPS_KEY,
-            version: 'weekly'
+            version: 'weekly',
+
         });
 
         const { Map } = await loader.importLibrary('maps');
@@ -34,14 +35,15 @@
             // center: { lat: -34.397, lng: 150.644 },
             // center: {lat: -17.83, lng: 31.090595},
             center: position,
-            zoom: parseInt(zoom)
+            zoom: parseInt(zoom),
+            mapId: "e9d9d5fcbbcfc6f9"
         });
 
         const { AdvancedMarkerElement } = await loader.importLibrary("marker");
         const marker = new AdvancedMarkerElement({
             map: map,
             position: position,
-            title: 'Uluru'
+            title: 'Your Location'
         });
 
     }
