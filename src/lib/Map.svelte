@@ -96,7 +96,7 @@
                 method: 'POST',
                 headers: { 
                     "Content-Type": 'application/json',
-                    "X-Goog-Api-Key": "AIzaSyDLIGING8NrN3grLslvv_R3LJLhGeYBjLU",
+                    "X-Goog-Api-Key": PUBLIC_GOOGLE_MAPS_KEY,
                     "X-Goog-FieldMask": "routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline",
                 },
                 body: JSON.stringify({
