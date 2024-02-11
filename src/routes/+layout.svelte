@@ -1,10 +1,12 @@
 <script>
 	import "../app.pcss";
+	import { onMount } from "svelte";
     import { goto } from '$app/navigation';
 	import { Button, DarkMode, Navbar, NavBrand, NavLi, NavUl, NavHamburger, ImagePlaceholder, Skeleton, TextPlaceholder, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Spinner } from 'flowbite-svelte';
 	import Logo from "./logo.svelte";
+	import LogoutButton from "$lib/LogoutButton.svelte";
 
-    export let data, activeUrl;
+    export let data, activeUrl, userID;
 
     const logout = async () => {
 		const url = `/api/auth/logout`;
@@ -42,10 +44,13 @@
 		<DropdownItem href="/logout">Sign out</DropdownItem>
 	  </Dropdown>
 	  <NavUl {activeUrl} >
-		<NavLi href="/" active={true}>Home</NavLi>
-		<NavLi href="/about">About</NavLi>
+		<NavLi href="/maps" active={true}>Maps</NavLi>
+		<NavLi href="/call">Calls</NavLi>
 		<NavLi href="/private">Private</NavLi>
 	  </NavUl>
+	  <div>
+		<LogoutButton />
+	  </div>
 	  {:else}
 	  <div>
 		<Button href="/login" size="sm">Login</Button>
@@ -54,4 +59,11 @@
 	</Navbar>
 </header>
 
-<slot></slot>
+<main class="container mx-auto flex flex-col p-4 gap-3 items-center ">
+	<slot></slot>
+</main>
+
+<style>
+
+</style>
+
