@@ -6,7 +6,7 @@
 	import Logo from "./logo.svelte";
 	import LogoutButton from "$lib/LogoutButton.svelte";
 
-    export let data, activeUrl, userID;
+    export let data, activeUrl;
 
     const logout = async () => {
 		const url = `/api/auth/logout`;
